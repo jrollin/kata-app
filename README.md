@@ -8,6 +8,7 @@ App to choose kata
 * [babel](https://babeljs.io)
 * [rollup](https://rollupjs.org/guide/en/)
 
+
 ## Install deps
 
 ```
@@ -25,4 +26,20 @@ npm run build
 
 ```
 npm run start
+```
+
+
+## Tests 
+
+used module @open-wc, see https://open-wc.org/init/
+
+* [karma](https://karma-runner.github.io)
+* eslint
+* prettier
+* husky
+
+
+
+```
+npm run test
 ```

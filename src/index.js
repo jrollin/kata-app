@@ -1,1 +1,1 @@
-import './my-element.js';
+import './kata-app.js';
