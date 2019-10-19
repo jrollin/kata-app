@@ -30,9 +30,7 @@ jobs:
       - restore_cache:
           keys:
             - dependencies-{{ checksum "package-lock.json" }}
-
-      - run: yarn install --frozen-lockfile
-      
+            
       # run lint
       - run: npm run lint
 

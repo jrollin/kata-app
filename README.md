@@ -2,6 +2,8 @@
 
 App to choose kata
 
+[![CircleCI](https://circleci.com/gh/jrollin/kata-app.svg?style=svg)](https://circleci.com/gh/jrollin/kata-app)
+
 ## Stack
 
 * [lit element](https://lit-element.polymer-project.org/)
