@@ -4,13 +4,10 @@
 #
 version: 2
 
-defaults: &defaults
-  working_directory: ~/repo
-  docker:
-    - image: circleci/node:10.16.0-browsers
-
 jobs:
   build:
+    docker:
+      - image: circleci/node:10.16.0-browsers
     steps:
       - checkout
       # Download and cache dependencies
@@ -26,6 +23,8 @@ jobs:
           key: dependencies-{{ checksum "package-lock.json" }}
 
   test:
+    docker:
+      - image: circleci/node:10.16.0-browsers
     steps:
       - checkout
       # run lint
@@ -43,6 +42,4 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test:
-          requires:
-            - build
+      - test
