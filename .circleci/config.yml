@@ -10,25 +10,39 @@ defaults: &defaults
     - image: circleci/node:10.16.0-browsers
 
 jobs:
-  test:
-    <<: *defaults
+  build:
     steps:
       - checkout
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v3-dependencies-{{ checksum "package.json" }}
+            - dependencies-{{ checksum "package-lock.json" }}
             # fallback to using the latest cache if no exact match is found
-            - v3-dependencies-
+            - dependencies-
       - run: yarn install --frozen-lockfile
       - save_cache:
           paths:
             - node_modules
-          key: v2-dependencies-{{ checksum "package.json" }}s
+          key: dependencies-{{ checksum "package-lock.json" }}
 
+  test:
+    steps:
+      - checkout
       # run lint
       - run: npm run lint
 
       # run tests
       - run: npm run test
 
+      - store_artifacts:
+        path: coverage
+        prefix: coverage
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
