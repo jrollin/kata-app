@@ -34,8 +34,8 @@ jobs:
       - run: npm run test
 
       - store_artifacts:
-        path: coverage
-        prefix: coverage
+          path: coverage
+          prefix: coverage
 
 workflows:
   version: 2
