@@ -27,6 +27,9 @@ jobs:
       - image: circleci/node:10.16.0-browsers
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package-lock.json" }}
       # run lint
       - run: npm run lint
 
