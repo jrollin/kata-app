@@ -6,6 +6,8 @@ import '../src/kata-app.js';
 describe('Kata app', () => {
   it('display app name !', async () => {
     const el = await fixture('<kata-app></kata-app>');
-    expect(el).shadowDom.to.equal(`<p>Kata shaker app !</p>`);
+    expect(el).shadowDom.to.equal(`<p>Kata shaker app !</p><language-choices></language-choices>`, {
+      ignoreChildren: ['language-choices'],
+    });
   });
 });
