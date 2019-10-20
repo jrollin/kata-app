@@ -1,5 +1,7 @@
 import { html, LitElement } from 'lit-element';
 
+import './language-choices.js';
+
 class KataApp extends LitElement {
   static get properties() {
     return {
@@ -10,6 +12,7 @@ class KataApp extends LitElement {
   render() {
     return html`
       <p>Kata shaker app !</p>
+      <language-choices></language-choices>
     `;
   }
 }
