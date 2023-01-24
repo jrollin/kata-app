@@ -1,8 +1,8 @@
 # kata-app
 
-App to choose kata
+App to choose kata (WIP)
 
-[![CircleCI](https://circleci.com/gh/jrollin/kata-app.svg?style=svg)](https://circleci.com/gh/jrollin/kata-app)
+[![Build Status](https://github.com/jrollin/kata-app/actions/workflows/test.yml/badge.svg)](https://github.com/jrollin/kata-app/actions/workflows/test.yml)
 
 ## Stack
 
